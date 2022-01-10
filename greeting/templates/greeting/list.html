@@ -1,0 +1,11 @@
+{% extends 'greeting/base.html' %}
+
+{% block content %}
+<h1>С кем уже здоровались</h1>
+    <h2>Всего пользователей: {{ count }}</h2>
+{% for item in users %}
+    <ul>
+        <li>{{ item.email }}</li>
+    </ul>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'greeting/base.html' %}
+{% block content %}
+
+<div class="input_form">
+    <form class="main_form" action="{% url 'hello' %}" method="POST">
+        {% csrf_token %}
+        <label class="margin text">Введите вашу почту:</label>
+        <input class="inpt_field margin" type="email" name="email" placeholder="example@example.com">
+        <input class="btn" type="submit" value="Поздороваться">
+    </form>
+</div>
+{% endblock %}
