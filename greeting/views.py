@@ -1,13 +1,13 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Email
+
 
 def index(request):
     title = 'Главная'
     return render(request, 'greeting/index.html', {'title': title})
 
-def hello(request):
 
+def hello(request):
     title = 'Приветствие'
     context = {
         'title': title,
@@ -24,6 +24,7 @@ def hello(request):
             context['data'] = hello_str
         return render(request, 'greeting/hello.html', context=context)
 
+
 def list(request):
     title = 'С кем уже здоровались'
     users = Email.objects.all()
@@ -33,6 +34,7 @@ def list(request):
         'count': len(users)
     }
     return render(request, 'greeting/list.html', context=context)
+
 
 def about(request):
     context = {
